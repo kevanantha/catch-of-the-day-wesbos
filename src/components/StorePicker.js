@@ -20,7 +20,7 @@ class StorePicker extends React.Component {
           required
           placeholder="Store Name"
           defaultValue={getFunName()} />
-        <button type="button">Visit Store</button>
+        <button type="button" onClick={this.goToStore}>Visit Store</button>
       </form>
     );
   }
