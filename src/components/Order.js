@@ -9,7 +9,6 @@ class Order extends React.Component {
       const fish = fishes[key];
       const count = order[key];
       const isAvailable = fish && fish.status === 'available';
-
       if (isAvailable) return prevTotal + (count * fish.price);
       return prevTotal;
     }, 0)
@@ -20,7 +19,8 @@ class Order extends React.Component {
           {orderIds.map(key => {
             const fish = fishes[key];
             const count = order[key];
-            const isAvailable = fish.status === 'available';
+            const isAvailable = fish && fish.status === 'available';
+            if (!fish) return null;
             if (!isAvailable) {
               return <li key={key}>Sorry {fish ? fish.name : 'fish'} is no longer available</li>
             } else {
