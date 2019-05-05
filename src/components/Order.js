@@ -43,7 +43,7 @@ class Order extends React.Component {
                 >
                   <li key={key}>
                     <span>
-                      <TransitionGroup component="span" clasName="count">
+                      <TransitionGroup component="span" className="count">
                         <CSSTransition
                           classNames="count"
                           key={count}
